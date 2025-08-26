@@ -1,5 +1,5 @@
 // ==== CONFIG ====
-const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // replace with your tunnel URL
+const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // your Cloudflare Tunnel URL
 const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com"; // replace
 const GITHUB_CLIENT_ID = "Ov23liDWpAiAISCWsBw5"; // replace
 const GITHUB_CALLBACK_URL = `${BACKEND_URL}/github-callback`; // backend endpoint
@@ -43,7 +43,6 @@ function showUserInfo(user) {
         return;
     }
 
-    // Safe template literal
     const name = user.name || user.login || "Unknown";
     const email = user.email || "No email";
     const picture = user.picture || user.avatar_url || "";
