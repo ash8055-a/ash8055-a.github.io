@@ -1,14 +1,13 @@
-// auth.js
-
 // ==== CONFIG ====
-const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // <-- replace with your tunnel URL
-const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com.apps.googleusercontent.com"; // <-- replace with your client ID
+const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // your tunnel URL
+const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com.apps.googleusercontent.com"; // Google Web client ID
+const GITHUB_CLIENT_ID = "Ov23liDWpAiAISCWsBw5"; // GitHub OAuth App client ID
+const GITHUB_CALLBACK_URL = `${https://syndication-belle-scenarios-johnson.trycloudflare.com}/github-callback`; // your backend endpoint
 
 // ==== GOOGLE SIGN-IN CALLBACK ====
 function handleCredentialResponse(response) {
     console.log("Encoded JWT ID token: " + response.credential);
 
-    // Send the token to your Flask backend
     fetch(`${BACKEND_URL}/login-callback`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -18,7 +17,6 @@ function handleCredentialResponse(response) {
     .then(data => {
         if(data.success) {
             console.log("Login successful:", data.user);
-            // Store user info in sessionStorage
             sessionStorage.setItem("user", JSON.stringify(data.user));
             showUserInfo(data.user);
         } else {
@@ -26,24 +24,15 @@ function handleCredentialResponse(response) {
             alert("Login failed: " + data.error);
         }
     })
-    .catch(err => {
-        console.error("Error sending credential:", err);
-    });
+    .catch(err => console.error("Error sending credential:", err));
 }
 
-// ==== GOOGLE SIGN-IN BUTTON ====
-function renderGoogleButton() {
-    google.accounts.id.initialize({
-        client_id: GOOGLE_CLIENT_ID,
-        callback: handleCredentialResponse
-    });
-
-    google.accounts.id.renderButton(
-        document.getElementById("google-signin-button"),
-        { theme: "outline", size: "large" }  // customization
-    );
-
-    google.accounts.id.prompt(); // show the One Tap prompt
+// ==== GITHUB LOGIN ====
+function githubLogin() {
+    const scope = "read:user user:email";
+    const redirectUri = encodeURIComponent(GITHUB_CALLBACK_URL);
+    const url = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&scope=${scope}&redirect_uri=${redirectUri}`;
+    window.location.href = url; // redirect user to GitHub OAuth
 }
 
 // ==== SHOW LOGGED-IN USER ====
@@ -54,11 +43,10 @@ function showUserInfo(user) {
         return;
     }
     infoDiv.innerHTML = `
-        <p>Logged in as: ${user.name} (${user.email})</p>
-        <img src="${user.picture}" alt="Profile Picture" style="width:50px; border-radius:50%;">
+        <p>Logged in as: ${user.name || user.login} (${user.email || "No email"})</p>
+        <img src="${user.picture || user.avatar_url}" alt="Profile Picture" style="width:50px; border-radius:50%;">
         <button id="logout-btn">Logout</button>
     `;
-
     document.getElementById("logout-btn").onclick = logout;
 }
 
@@ -66,18 +54,32 @@ function showUserInfo(user) {
 function logout() {
     sessionStorage.removeItem("user");
     showUserInfo(null);
-    // Optional: tell backend to destroy session
     fetch(`${BACKEND_URL}/logout`, { method: "POST" });
-    google.accounts.id.disableAutoSelect(); // disables auto-login
+    if(window.google?.accounts?.id) google.accounts.id.disableAutoSelect();
+}
+
+// ==== GOOGLE SIGN-IN BUTTON ====
+function renderGoogleButton() {
+    google.accounts.id.initialize({
+        client_id: GOOGLE_CLIENT_ID,
+        callback: handleCredentialResponse
+    });
+    google.accounts.id.renderButton(
+        document.getElementById("google-signin-button"),
+        { theme: "outline", size: "large" }
+    );
+    google.accounts.id.prompt();
 }
 
 // ==== INIT ====
 window.onload = function() {
     renderGoogleButton();
 
-    // restore session if exists
+    // Restore session if exists
     const storedUser = sessionStorage.getItem("user");
-    if(storedUser) {
-        showUserInfo(JSON.parse(storedUser));
-    }
+    if(storedUser) showUserInfo(JSON.parse(storedUser));
+
+    // Attach GitHub login button
+    const githubBtn = document.getElementById("github-login-btn");
+    if(githubBtn) githubBtn.onclick = githubLogin;
 };
