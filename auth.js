@@ -1,12 +1,12 @@
 // ==== CONFIG ====
-const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // your tunnel URL
-const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com.apps.googleusercontent.com"; // Google Web client ID
-const GITHUB_CLIENT_ID = "Ov23liDWpAiAISCWsBw5"; // GitHub OAuth App client ID
-const GITHUB_CALLBACK_URL = `${https://syndication-belle-scenarios-johnson.trycloudflare.com}/github-callback`; // your backend endpoint
+const BACKEND_URL = "https://syndication-belle-scenarios-johnson.trycloudflare.com"; // replace with your tunnel URL
+const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com"; // replace
+const GITHUB_CLIENT_ID = "Ov23liDWpAiAISCWsBw5"; // replace
+const GITHUB_CALLBACK_URL = `${BACKEND_URL}/github-callback`; // backend endpoint
 
 // ==== GOOGLE SIGN-IN CALLBACK ====
 function handleCredentialResponse(response) {
-    console.log("Encoded JWT ID token: " + response.credential);
+    console.log("Encoded JWT ID token:", response.credential);
 
     fetch(`${BACKEND_URL}/login-callback`, {
         method: "POST",
@@ -15,7 +15,7 @@ function handleCredentialResponse(response) {
     })
     .then(res => res.json())
     .then(data => {
-        if(data.success) {
+        if (data.success) {
             console.log("Login successful:", data.user);
             sessionStorage.setItem("user", JSON.stringify(data.user));
             showUserInfo(data.user);
@@ -32,7 +32,7 @@ function githubLogin() {
     const scope = "read:user user:email";
     const redirectUri = encodeURIComponent(GITHUB_CALLBACK_URL);
     const url = `https://github.com/login/oauth/authorize?client_id=${GITHUB_CLIENT_ID}&scope=${scope}&redirect_uri=${redirectUri}`;
-    window.location.href = url; // redirect user to GitHub OAuth
+    window.location.href = url;
 }
 
 // ==== SHOW LOGGED-IN USER ====
@@ -43,23 +43,26 @@ function showUserInfo(user) {
         return;
     }
 
-    // Use only one template literal with proper backticks and braces
+    // Safe template literal
+    const name = user.name || user.login || "Unknown";
+    const email = user.email || "No email";
+    const picture = user.picture || user.avatar_url || "";
+
     infoDiv.innerHTML = `
-        <p>Logged in as: ${user.name || user.login} (${user.email || "No email"})</p>
-        <img src="${user.picture || user.avatar_url}" alt="Profile Picture" style="width:50px; border-radius:50%;">
+        <p>Logged in as: ${name} (${email})</p>
+        <img src="${picture}" alt="Profile Picture" style="width:50px; border-radius:50%;">
         <button id="logout-btn">Logout</button>
     `;
 
     document.getElementById("logout-btn").onclick = logout;
 }
 
-
 // ==== LOGOUT ====
 function logout() {
     sessionStorage.removeItem("user");
     showUserInfo(null);
     fetch(`${BACKEND_URL}/logout`, { method: "POST" });
-    if(window.google?.accounts?.id) google.accounts.id.disableAutoSelect();
+    if (window.google?.accounts?.id) google.accounts.id.disableAutoSelect();
 }
 
 // ==== GOOGLE SIGN-IN BUTTON ====
@@ -81,9 +84,9 @@ window.onload = function() {
 
     // Restore session if exists
     const storedUser = sessionStorage.getItem("user");
-    if(storedUser) showUserInfo(JSON.parse(storedUser));
+    if (storedUser) showUserInfo(JSON.parse(storedUser));
 
-    // Attach GitHub login button
+    // GitHub button
     const githubBtn = document.getElementById("github-login-btn");
-    if(githubBtn) githubBtn.onclick = githubLogin;
+    if (githubBtn) githubBtn.onclick = githubLogin;
 };
