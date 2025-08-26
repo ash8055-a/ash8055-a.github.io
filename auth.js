@@ -1,5 +1,5 @@
 // ==== CONFIG ====
-const BACKEND_URL = "https://jersey-genome-thickness-skins.trycloudflare.com"; // your Cloudflare Tunnel URL
+const BACKEND_URL = "https://futures-theater-feeling-appearance.trycloudflare.com"; // your Cloudflare Tunnel URL
 const GOOGLE_CLIENT_ID = "102916135822-k4m8ggidifd1deqbkd6r409ojrj8pdba.apps.googleusercontent.com"; // replace
 const GITHUB_CLIENT_ID = "Ov23liDWpAiAISCWsBw5"; // replace
 const GITHUB_CALLBACK_URL = `${BACKEND_URL}/github-callback`; // backend endpoint
