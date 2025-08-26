@@ -38,17 +38,21 @@ function githubLogin() {
 // ==== SHOW LOGGED-IN USER ====
 function showUserInfo(user) {
     const infoDiv = document.getElementById("user-info");
-    if(!user) {
+    if (!user) {
         infoDiv.innerHTML = "";
         return;
     }
+
+    // Use only one template literal with proper backticks and braces
     infoDiv.innerHTML = `
         <p>Logged in as: ${user.name || user.login} (${user.email || "No email"})</p>
         <img src="${user.picture || user.avatar_url}" alt="Profile Picture" style="width:50px; border-radius:50%;">
         <button id="logout-btn">Logout</button>
     `;
+
     document.getElementById("logout-btn").onclick = logout;
 }
+
 
 // ==== LOGOUT ====
 function logout() {
