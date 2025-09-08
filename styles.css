@@ -13,6 +13,34 @@ a{
     color: white;
 }
 
+.btn {
+  background-color: #860079;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  display: block;     /* forces vertical stacking */
+  margin: 10px 0;     /* spacing between buttons */
+}
+
+
+
+.btn:hover {
+  background-color: #850073;   /* Slightly lighter on hover */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: translateY(0);    /* Push down when clicked */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
 /* GitHub-specific button */
 .github-btn {
   background-color: #333;
