@@ -12,3 +12,21 @@ h1 {
 a{
     color: white;
 }
+
+/* GitHub-specific button */
+.github-btn {
+  background-color: #333;
+  color: white;
+  display: flex;              /* align icon + text */
+  align-items: center;
+  gap: 8px;                   /* space between icon and text */
+}
+
+.github-btn:hover {
+  background-color: #24292f;  /* darker GitHub hover */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
