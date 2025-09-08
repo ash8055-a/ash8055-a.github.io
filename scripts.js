@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const goBtn = document.getElementById("goBtn");
-  const ghBtn = document.getElementById("ghProfileBtn");
+  const ghProfileBtn = document.getElementById("ghProfileBtn");
 
   if (goBtn) {
     goBtn.addEventListener("click", () => {
