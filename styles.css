@@ -1,4 +1,14 @@
-body{
-  font-family: Arial, Helvetica, sans-serif;
-  text-align: center !important;
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #6a0060;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+a{
+    color: white;
 }
