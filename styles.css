@@ -56,8 +56,11 @@ a{
 
 /* Centering wrapper for GitHub button */
 .center-btn {
-  text-align: center;
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  margin-top: 20px;        /* optional spacing */
 }
+
 .icon {
   width: 20px;
   height: 20px;
