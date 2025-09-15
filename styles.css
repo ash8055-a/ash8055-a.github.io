@@ -54,6 +54,10 @@ a{
   background-color: #24292f;  /* darker GitHub hover */
 }
 
+/* Centering wrapper for GitHub button */
+.center-btn {
+  text-align: center;
+}
 .icon {
   width: 20px;
   height: 20px;
