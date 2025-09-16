@@ -63,9 +63,11 @@ a{
 
 .center-btn-side {
   display: flex;
-  align-items: center;    /* center horizontally */
-  gap: 12px;              /* space between buttons */
+  justify-content: center; /* centers items along the main axis (horizontal) */
+  align-items: center;     /* centers items along the cross axis (vertical) */
+  gap: 8px;               /* space between buttons */
 }
+
 
 
 img.banner {
