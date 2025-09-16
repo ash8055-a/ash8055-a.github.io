@@ -57,8 +57,9 @@ a{
 /* Centering wrapper for GitHub button */
 .center-btn {
   display: flex;
-  justify-content: center; /* horizontal centering */
-  margin-top: 20px;        /* optional spacing */
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  gap: 12px;              /* space between buttons */
 }
 
 img.banner {
