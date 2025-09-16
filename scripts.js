@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const goBtn = document.getElementById("goBtn");
   const ghProfileBtn = document.getElementById("ghProfileBtn");
 
-  if (goBtn) {
-    goBtn.addEventListener("click", () => {
-      window.location.href = "/login";
-    });
-  }
 
 if (ghProfileBtn) {
     ghProfileBtn.addEventListener("click", () => {
-      window.location.href = "https://github.com/ash8055-a";
+      window.open = "https://github.com/ash8055-a", "_blank";
     });
   }
 });
