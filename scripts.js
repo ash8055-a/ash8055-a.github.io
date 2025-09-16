@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (projectsBtn) {
     projectsBtn.addEventListener("click", () => {
-      window.location.href "/projects";
+      window.location.href = "/projects";
     });
   }
 });
