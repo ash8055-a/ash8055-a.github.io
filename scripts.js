@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (projectsBtn) {
-    ghBtn.addEventListener("click", () => {
+    projectsBtn.addEventListener("click", () => {
       window.location.href("/projects");
     });
   }
