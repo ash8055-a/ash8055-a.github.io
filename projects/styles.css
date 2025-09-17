@@ -81,3 +81,30 @@ a{
   height: 20px;
 }
 
+/* Push footer to bottom */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto; /* pushes footer down */
+  background: #f8f8f8;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
+
+.site-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.site-footer a:hover {
+  color: black;
+}
+
