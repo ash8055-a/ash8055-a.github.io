@@ -67,21 +67,32 @@ a{
 }
 
 
+/* Button styling */
 .playdate-btn {
   display: flex;
   align-items: center;
-  gap: 8px; /* space between logo and text */
-  background-color: #ffcc00; /* Playdate yellow */
-  color: black;
-  font-weight: bold;
+  gap: 8px;                /* space between icon & text */
+  padding: 0.5rem 1rem;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.playdate-btn .icon {
+.playdate-btn:hover {
+  background: #eaeaea;
+}
+
+/* Icon inside button */
+.playdate-icon {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;          /* keeps icon from stretching */
 }
 
-/* Push footer to bottom */
+/* Footer */
 html, body {
   height: 100%;
   margin: 0;
@@ -90,7 +101,7 @@ html, body {
 }
 
 .site-footer {
-  margin-top: auto; /* pushes footer down */
+  margin-top: auto; /* stick to bottom */
   background: #f8f8f8;
   padding: 0.75rem;
   text-align: center;
@@ -99,12 +110,48 @@ html, body {
   border-top: 1px solid #ddd;
 }
 
-.site-footer a {
-  color: inherit;
-  text-decoration: underline;
+
+/* Button styling */
+.playdate-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;                /* space between icon & text */
+  padding: 0.5rem 1rem;
+  background: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
 }
 
-.site-footer a:hover {
-  color: black;
+.playdate-btn:hover {
+  background: #eaeaea;
 }
+
+/* Icon inside button */
+.playdate-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;          /* keeps icon from stretching */
+}
+
+/* Footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto; /* stick to bottom */
+  background: #f8f8f8;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #555;
+  border-top: 1px solid #ddd;
+}
+
 
