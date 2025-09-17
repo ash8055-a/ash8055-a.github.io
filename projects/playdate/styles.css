@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: #6a0060;
+    text-align: center !important;
+}
+
+h1 {
+    font-weight: bold;
+}
+
+a{
+    color: white;
+}
+
+.btn {
+  background-color: #860079;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.15);
+  display: block;     /* forces vertical stacking */
+  margin: 10px 0;     /* spacing between buttons */
+}
+
+
+
+.btn:hover {
+  background-color: #850073;   /* Slightly lighter on hover */
+  transform: translateY(-2px); /* Lift effect */
+  box-shadow: 0 6px 10px rgba(0,0,0,0.2);
+}
+
+.btn:active {
+  transform: translateY(0);    /* Push down when clicked */
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* GitHub-specific button */
+.github-btn {
+  background-color: #333;
+  color: white;
+  display: flex;              /* align icon + text */
+  align-items: center;
+  gap: 8px;                   /* space between icon and text */
+}
+
+.github-btn:hover {
+  background-color: #24292f;  /* darker GitHub hover */
+}
+
+/* Centering wrapper for GitHub button */
+.center-btn {
+  display: flex;
+  justify-content: center; /* horizontal centering */
+  margin-top: 20px;        /* optional spacing */
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* Container for project buttons */
+.project-buttons {
+  display: flex;
+  justify-content: center;   /* center horizontally */
+  gap: 16px;                 /* space if you add more buttons */
+  margin-top: 1.5rem;
+}
+
+/* Playdate button */
+.playdate-btn {
+  display: inline-flex;       /* keep icon + text side by side */
+  align-items: center;
+  gap: 8px;                   /* spacing between icon and text */
+  padding: 0.5rem 1rem;
+  background: #fff6cc;        /* Playdate yellow vibe */
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.playdate-btn:hover {
+  background: #ffe680;
+  transform: translateY(-2px);
+}
+
+/* Icon */
+.playdate-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* Footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-footer {
+  margin-top: auto;
+  background: transparent;
+  padding: 0.75rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+  border-top: 1px solid rgba(255, 255, 255, 0.2); /* faint divider */
+}
+
