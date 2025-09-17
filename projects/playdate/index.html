@@ -1,21 +1,19 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Development Warning</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="warning-box">
-    <h1>🚧STOP!!🚧</h1>
-    <h2 id="stageTitle"></h2>
-    <p id="stageDesc"></p>
-    <div class="center-btn">
-    <button id="continueBtn" class="btn">Continue Anyway</button>
-    </div>
+  <div class="warning-container">
+    <h1 id="warning-title">⚠️ DEVELOPMENT WARNING ⚠️</h1>
+    <p id="warning-message">
+      This site is under development. You may encounter bugs, missing features, or unfinished designs.
+    </p>
+    <button id="proceed-button">I Understand, Continue</button>
   </div>
-  <script src="scripts.js"></script>
 </body>
 </html>
-
