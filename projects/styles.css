@@ -65,3 +65,19 @@ a{
   width: 20px;
   height: 20px;
 }
+
+
+.playdate-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* space between logo and text */
+  background-color: #ffcc00; /* Playdate yellow */
+  color: black;
+  font-weight: bold;
+}
+
+.playdate-btn .icon {
+  width: 20px;
+  height: 20px;
+}
+
