@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (continueBtn) {
       continueBtn.addEventListener("click", () => {
-        window.location.href = "index.html"; // redirect after continue
+        window.location.href = "home.html"; // redirect after continue
       });
     }
   } else if (currentStage.showWarning === "header") {
