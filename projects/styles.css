@@ -67,29 +67,39 @@ a{
 }
 
 
-/* Button styling */
-.playdate-btn {
+/* Container for project buttons */
+.project-buttons {
   display: flex;
+  justify-content: center;   /* center horizontally */
+  gap: 16px;                 /* space if you add more buttons */
+  margin-top: 1.5rem;
+}
+
+/* Playdate button */
+.playdate-btn {
+  display: inline-flex;       /* keep icon + text side by side */
   align-items: center;
-  gap: 8px;                /* space between icon & text */
+  gap: 8px;                   /* spacing between icon and text */
   padding: 0.5rem 1rem;
-  background: #f4f4f4;
-  border: 1px solid #ccc;
+  background: #fff6cc;        /* Playdate yellow vibe */
+  border: 2px solid #ffcc00;
   border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
 }
 
 .playdate-btn:hover {
-  background: #eaeaea;
+  background: #ffe680;
+  transform: translateY(-2px);
 }
 
-/* Icon inside button */
+/* Icon */
 .playdate-icon {
   width: 20px;
   height: 20px;
-  flex-shrink: 0;          /* keeps icon from stretching */
+  flex-shrink: 0;
 }
 
 /* Footer */
@@ -109,49 +119,4 @@ html, body {
   color: #555;
   border-top: 1px solid #ddd;
 }
-
-
-/* Button styling */
-.playdate-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;                /* space between icon & text */
-  padding: 0.5rem 1rem;
-  background: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-
-.playdate-btn:hover {
-  background: #eaeaea;
-}
-
-/* Icon inside button */
-.playdate-icon {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;          /* keeps icon from stretching */
-}
-
-/* Footer */
-html, body {
-  height: 100%;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-}
-
-.site-footer {
-  margin-top: auto; /* stick to bottom */
-  background: #f8f8f8;
-  padding: 0.75rem;
-  text-align: center;
-  font-size: 0.8rem;
-  color: #555;
-  border-top: 1px solid #ddd;
-}
-
 
