@@ -41,25 +41,6 @@ a{
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-/* --- GitHub: Dark theme --- */
-.github {
-  --bg: #333;             /* Dark GitHub gray */
-  --border: #000;          /* Subtle darker outline */
-  --hover: #24292f;        /* GitHub brand blackish hover */
-  --text: #ffffff;         /* Always white text */
-
-  background: var(--bg);
-  border: 2px solid var(--border);
-  color: var(--text);
-  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
-}
-
-.github:hover {
-  background: var(--hover);
-  color: var(--text);
-  transform: translateY(-2px);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
-}
 
 
 
@@ -108,6 +89,27 @@ img.banner {
   background: var(--bg);
   border: 2px solid var(--border);
 }
+
+/* --- GitHub: Dark theme --- */
+.github {
+  --bg: #333;             /* Dark GitHub gray */
+  --border: #000;          /* Subtle darker outline */
+  --hover: #24292f;        /* GitHub brand blackish hover */
+  --text: #ffffff;         /* Always white text */
+
+  background: var(--bg);
+  border: 2px solid var(--border);
+  color: var(--text);
+  transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
+}
+
+.github:hover {
+  background: var(--hover);
+  color: var(--text);
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
 
 /* Hover lift + highlight */
 .social-btn:hover {
