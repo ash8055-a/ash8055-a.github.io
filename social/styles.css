@@ -158,3 +158,9 @@ img.banner {
   justify-content: center;
 }
 
+#social h2 {
+  font-size: 2.5rem !important; /* same size as h1 headers */
+  font-weight: bold;
+  margin-bottom: 1em;
+  text-transform: none;
+}
