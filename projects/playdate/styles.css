@@ -61,6 +61,13 @@ a{
   margin-top: 20px;        /* optional spacing */
 }
 
+.center-btn-side {
+  display: flex;
+  justify-content: center; /* centers items along the main axis (horizontal) */
+  align-items: center;     /* centers items along the cross axis (vertical) */
+  gap: 8px;               /* space between buttons */
+}
+
 .icon {
   width: 20px;
   height: 20px;
