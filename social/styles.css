@@ -82,3 +82,76 @@ img.banner {
   width: 20px;
   height: 20px;
 }
+
+/* --- Base button --- */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+  color: #000;
+  background: var(--bg);
+  border: 2px solid var(--border);
+}
+
+/* Hover lift + highlight */
+.social-btn:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+}
+
+/* Icon sizing */
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+/* --- Platform color themes --- */
+
+/* YouTube: Red theme */
+.youtube {
+  --bg: #ffe6e6;
+  --border: #ff0000;
+  --hover: #ffb3b3;
+}
+
+/* Discord: Blurple theme */
+.discord {
+  --bg: #e8e9ff;
+  --border: #5865f2;
+  --hover: #c8cbff;
+}
+
+
+
+/* GitHub: Dark outline with light base */
+.github {
+  --bg: #f3f3f3;
+  --border: #333;
+  --hover: #e0e0e0;
+}
+
+/* Layout container */
+#social {
+  text-align: center;
+  padding: 4em 0;
+}
+
+#social h2 {
+  margin-bottom: 1em;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  justify-content: center;
+}
+
