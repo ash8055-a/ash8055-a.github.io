@@ -46,14 +46,15 @@ a{
   --bg: #24292f;   /* GitHub dark gray */
   --border: #000;  /* subtle black border */
   --hover: #000;   /* deep black on hover */
-  color: #fff;     /* white text */
+  color: #fff !important;  /* force white text */
 }
 
 .github:hover {
   background: var(--hover);
   transform: translateY(-2px);
-  color: #fff;
+  color: #fff !important;  /* keep white on hover */
 }
+
 
 .center-btn {
   display: flex;
