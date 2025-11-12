@@ -41,23 +41,24 @@ a{
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-/* GitHub: Dark mode button */
+/* --- GitHub: Dark theme --- */
 .github {
-  --bg: #24292f;          /* GitHub dark gray */
-  --border: #000;         /* black border */
-  --hover: #000;          /* darker on hover */
-  --text: #f6f8fa;        /* softer off-white */
-  color: var(--text);
+  --bg: #333;             /* Dark GitHub gray */
+  --border: #000;          /* Subtle darker outline */
+  --hover: #24292f;        /* GitHub brand blackish hover */
+  --text: #ffffff;         /* Always white text */
+
   background: var(--bg);
   border: 2px solid var(--border);
+  color: var(--text);
   transition: background 0.2s, transform 0.1s, box-shadow 0.2s;
 }
 
 .github:hover {
   background: var(--hover);
-  transform: translateY(-2px);
   color: var(--text);
-  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3); /* subtle white glow */
+  transform: translateY(-2px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 
