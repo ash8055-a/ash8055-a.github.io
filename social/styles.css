@@ -141,7 +141,7 @@ img.banner {
 /* Layout container */
 #social {
   text-align: center;
-  padding: 4em 0;
+  padding: 2em 0 4em 0; /* top 2em, bottom 4em */
 }
 
 #social h2 {
