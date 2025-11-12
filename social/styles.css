@@ -41,17 +41,18 @@ a{
   box-shadow: 0 3px 6px rgba(0,0,0,0.15);
 }
 
-/* GitHub-specific button */
-.github-btn {
-  background-color: #333;
-  color: white;
-  display: flex;              /* align icon + text */
-  align-items: center;
-  gap: 8px;                   /* space between icon and text */
+/* GitHub: Dark mode button */
+.github {
+  --bg: #24292f;   /* GitHub dark gray */
+  --border: #000;  /* subtle black border */
+  --hover: #000;   /* deep black on hover */
+  color: #fff;     /* white text */
 }
 
-.github-btn:hover {
-  background-color: #24292f;  /* darker GitHub hover */
+.github:hover {
+  background: var(--hover);
+  transform: translateY(-2px);
+  color: #fff;
 }
 
 .center-btn {
